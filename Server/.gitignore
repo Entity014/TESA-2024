@@ -5,3 +5,4 @@
 /socket/socket-back/.venv/Scripts
 /mosquitto
 /socket/socket-front/node_modules
+/socket/socket-front/package_lock.json
