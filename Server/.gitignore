@@ -1,6 +1,7 @@
 # Created by venv; see https://docs.python.org/3/library/venv.html
 /socket/socket-back/.venv/include
-/socket/socket-back/.venv/lib
+/socket/socket-back/.venv/Lib
 /socket/socket-back/.venv/pyvenv.cfg
 /socket/socket-back/.venv/Scripts
 /mosquitto
+/socket/socket-front/node_modules
