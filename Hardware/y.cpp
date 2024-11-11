@@ -8,7 +8,7 @@ int main() {
     // Create a SoundBuffer to hold the audio data from the .wav file
     sf::SoundBuffer buffer;
 
-    // Load the .wav file into the buffer
+    // Load the .wav file in    to the buffer
     if (!buffer.loadFromFile(filename)) {
         std::cerr << "Error loading file: " << filename << std::endl;
         return -1;
