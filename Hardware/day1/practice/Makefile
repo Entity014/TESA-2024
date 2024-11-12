@@ -1,15 +1,17 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall -Wextra -g -lm -lsqlite3
 
 # Libraries to link
-LIBS = -lm -lpthread -lcurl -lpaho-mqtt3c -lcjson
+# LIBS = -lm -lpthread -lcurl -lpaho-mqtt3c -lcjson
+LIBS = -lm -lsqlite3
 
 # Target application name
-TARGET = iot_app
-
+# TARGET = iot_app
+TARGET = dump_mem
 # Source files and object files
-SRCS = iot_app.c rest_thr.c mqtt_thr.c 
+# SRCS = iot_app.c rest_thr.c mqtt_thr.c 
+SRCS = dump_mem.c db_helper.c
 OBJS = $(SRCS:.c=.o)
 
 # Default target to build the application

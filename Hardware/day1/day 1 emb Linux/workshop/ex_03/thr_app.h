@@ -21,4 +21,4 @@ void *front_thr_fcn( void *ptr );
 void *mid_thr_fcn( void *ptr );
 void *end_thr_fcn( void *ptr );
 
-#endif // THR_APP_H
+#endif
