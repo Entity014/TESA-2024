@@ -8,14 +8,14 @@ int main(int argc, char *argv[]) {
         struct stat buffer;
         FILE *file;
         if (stat(fname, &buffer) != 0) {
-            file = /* TBD */(fname, /* TBD */);
-            /* TBD */(file, "index, value\n");
+            file = fopen(fname, "w");
+            fprintf(file, "index, value\n");
         } else {
-            file = /* TBD */(fname, /* TBD */);
+            file = fopen(fname, "a");
         }
         int rows = atoi(argv[1]);
         for (int i=0; i < rows; i++) {
-            /* TBD */(file, "%d, %f\n", i, (float)rand()/RAND_MAX);
+            fprintf(file, "%d, %f\n", i, (float)rand()/RAND_MAX);
         }
     } else {
         printf("Use ./csv_gen NUM_ROWS\n");

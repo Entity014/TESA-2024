@@ -26,13 +26,13 @@ void *front_thr_fcn( void *ptr ) {
             if (value == -1) {
                 break;
             }
-            /* TBD */(&data_cond_mutex);
-            /* TBD */(&data_cond);
+            pthread_mutex_lock(&data_cond_mutex);
+            pthread_cond_signal(&data_cond);
             time (&now);
             timeinfo = localtime ( &now );
             shared_data = value;
             printf("Thread front signals at %s", asctime (timeinfo));
-            /* TBD */(&data_cond_mutex);
+            pthread_mutex_unlock(&data_cond_mutex);
         }
     }
     return 0;

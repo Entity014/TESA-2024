@@ -19,8 +19,8 @@ void *mid_thr_fcn( void *ptr ) {
     printf ( "Thread mid starts at: %s", asctime (timeinfo) );
     while(1) {
         // loop
-        /* TBD */(&data_cond_mutex);
-        /* TBD */(&data_cond, &data_cond_mutex);
+        pthread_mutex_lock(&data_cond_mutex);
+        pthread_cond_wait(&data_cond, &data_cond_mutex);
         time (&now);
         timeinfo = localtime ( &now );
         printf ( "Thread mid runs at: %s", asctime (timeinfo) );
@@ -33,10 +33,10 @@ void *mid_thr_fcn( void *ptr ) {
             }
             avg_shared_data /= DATA_BUF_SZ;
             printf("Report data %.2f\n", avg_shared_data);
-            /* TBD */(&avg_data_cond_mutex);
-            /* TBD */(&avg_data_cond);
-            /* TBD */(&avg_data_cond_mutex);
+            pthread_mutex_lock(&avg_data_cond_mutex);
+            pthread_cond_signal(&avg_data_cond);
+            pthread_mutex_unlock(&avg_data_cond_mutex);
         }
-        /* TBD */(&data_cond_mutex);
+        pthread_mutex_unlock(&data_cond_mutex);
     }
 }

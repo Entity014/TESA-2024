@@ -10,3 +10,5 @@ g++ main.cpp -o sound_player -lsfml-audio -lsfml-system
 
 
 scp <ไฟล์ต้นทาง> userpi <ไฟล์ปลายทาง>  .
+
+htop
