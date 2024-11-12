@@ -54,7 +54,7 @@ long get_memory_value(const char *field) {
 
     const char db_name[] = "/home/reai_bot/mem.db";
     dbase_init(db_name);
-    dbase_append(db_name, memory_value);
+    dbase_append(db_name, field);
 
     return memory_value;
 }

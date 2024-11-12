@@ -27,3 +27,40 @@ MemAvailable:    7074544 kB
 
 
 curl -X PUT -d '{"message": "Hello"}' "https://tesa2024-reai-cmu-manatee-default-rtdb.asia-southeast1.firebasedatabase.app/test.json"
+
+
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Wextra -g
+
+# Libraries to link
+LIBS = -lpaho-mqtt3c
+
+# Target application name
+TARGET = mqtt_sub
+
+# Source files and object files
+SRCS = mqtt_subscribe.c
+OBJS = $(SRCS:.c=.o)
+
+# Default target to build the application
+all: $(TARGET)
+
+# Rule to link object files and create the executable with libraries
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
+
+# Rule to compile .c files into .o files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean up build artifacts
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+# Run the application
+run: $(TARGET)
+	./$(TARGET)
+
+# Phony targets
+.PHONY: all clean run

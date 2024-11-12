@@ -12,9 +12,7 @@
 #define TIMEOUT     10000L
 
 void message_arrived(void* context, char* topicName, int topicLen, MQTTClient_message* message) {
-    printf("Message received on topic %s: %s\n", topicName, (char*)message->payload);
-    MQTTClient_freeMessage(&message);
-    MQTTClient_free(topicName);
+    printf("Message received on topic %s: %s\n", (char*)topicName, (char*)message->payload);
 }
 
 int main(int argc, char* argv[]) {

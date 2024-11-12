@@ -1,15 +1,15 @@
 # Compiler and flags
 CC = gcc
-CFLAGS = -Wall -Wextra -g
+CFLAGS = -Wall -Wextra -g -lm -lsqlite3
 
 # Libraries to link
-LIBS = -lm -lreadline -lpthread
+LIBS = -lm -lreadline -lpthread -lpaho-mqtt3c -lcurl -lsqlite3 -lcjson
 
 # Target application name
 TARGET = thr_app
 
 # Source files and object files
-SRCS = thr_app.c front_thr.c mid_thr.c end_thr.c
+SRCS = db_helper.c thr_app.c front_thr.c mid_thr.c end_thr.c
 OBJS = $(SRCS:.c=.o)
 
 # Default target to build the application

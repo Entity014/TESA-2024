@@ -16,10 +16,10 @@
 // shared variables
 extern pthread_cond_t  data_cond;
 extern pthread_mutex_t data_cond_mutex;
-extern int shared_data;
+extern char *shared_data;
 extern pthread_cond_t  avg_data_cond;
 extern pthread_mutex_t avg_data_cond_mutex;
-extern float avg_shared_data;
+extern long avg_shared_data;
 
 // function prototypes
 void *front_thr_fcn( void *ptr );

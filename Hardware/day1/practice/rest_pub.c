@@ -53,19 +53,19 @@ void pub_FireBase(const char *memfield, long memory_value) {
     curl_global_cleanup();
 }
 
-// int main(int argc, char *argv[]) {
-//     if (argc != 2) {
-//         fprintf(stderr, "Usage: %s <memfield_name>\n", argv[0]);
-//         exit(1);
-//     }
+int main(int argc, char *argv[]) {
+    if (argc != 2) {
+        fprintf(stderr, "Usage: %s <memfield_name>\n", argv[0]);
+        exit(1);
+    }
 
-//     const char *memfield = argv[1];  // Memory field name passed as command line argument (e.g., "MemTotal")
+    const char *memfield = argv[1];  // Memory field name passed as command line argument (e.g., "MemTotal")
 
-//     // Retrieve the memory value for the given memfield
-//     long memory_value = get_memory_value(memfield);
+    // Retrieve the memory value for the given memfield
+    long memory_value = get_memory_value(memfield);
 
-//     // Send the memory value to Firebase
-//     pub_FireBase(memfield, memory_value);
+    // Send the memory value to Firebase
+    pub_FireBase(memfield, memory_value);
 
-//     return 0;
-// }
+    return 0;
+}
