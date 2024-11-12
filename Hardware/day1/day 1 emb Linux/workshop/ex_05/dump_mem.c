@@ -30,6 +30,9 @@ int get_mem_free() {
 }
 
 int main() {
-    /* TBD */
+    const char db_name[] = "/home/reai_bot/mem.db";
+    int mem_free_size = get_mem_free();
+    dbase_init(db_name);
+    dbase_append(db_name, mem_free_size);
     exit(0);
 }

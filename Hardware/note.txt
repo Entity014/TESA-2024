@@ -12,3 +12,10 @@ g++ main.cpp -o sound_player -lsfml-audio -lsfml-system
 scp <ไฟล์ต้นทาง> userpi <ไฟล์ปลายทาง>  .
 
 htop
+
+
+team: REAI_CMU:_Manatee
+
+sqlite3 /home/reai_bot/mem.db
+SELECT * FROM data_table;
+.quit

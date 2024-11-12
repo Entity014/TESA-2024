@@ -17,7 +17,10 @@ size_t resp_callback(void *buffer, size_t size, size_t nmemb, void *userp) {
     cJSON_Delete(json);
 
     // Trigger
-    /* TBD */
+    pthread_mutex_lock(&data_cond_mutex);
+    shared_value = value;
+    pthread_cond_signal(&data_cond);
+    pthread_mutex_unlock(&data_cond_mutex);
 
     return realsize;
 }
