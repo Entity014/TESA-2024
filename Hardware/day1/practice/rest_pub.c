@@ -1,16 +1,17 @@
-#include <stdio.h>
-#include <string.h>
-#include <curl/curl.h>
+#include "rest_pub.h"
 
-
-int main() {
+// Function to publish data to Firebase
+void pub_FireBase(const char *memfield, long memory_value) {
     // Initialize a CURL handle
     CURL *curl;
     CURLcode res;
 
     // Firebase URL and the data to be sent
     const char *url = "https://tesa2024-reai-cmu-manatee-default-rtdb.asia-southeast1.firebasedatabase.app/test.json";
-    const char *jsonData = "{\"mem\": \"pha\"}";
+
+    // Prepare the JSON data dynamically with the memory field and value
+    char jsonData[200];  // Sufficient size for the JSON string
+    snprintf(jsonData, sizeof(jsonData), "{\"%s\": \"%ld\"}", memfield, memory_value);
 
     // Initialize the CURL library
     curl_global_init(CURL_GLOBAL_DEFAULT);
@@ -50,6 +51,21 @@ int main() {
 
     // Cleanup global CURL library
     curl_global_cleanup();
-
-    return 0;
 }
+
+// int main(int argc, char *argv[]) {
+//     if (argc != 2) {
+//         fprintf(stderr, "Usage: %s <memfield_name>\n", argv[0]);
+//         exit(1);
+//     }
+
+//     const char *memfield = argv[1];  // Memory field name passed as command line argument (e.g., "MemTotal")
+
+//     // Retrieve the memory value for the given memfield
+//     long memory_value = get_memory_value(memfield);
+
+//     // Send the memory value to Firebase
+//     pub_FireBase(memfield, memory_value);
+
+//     return 0;
+// }

@@ -1,9 +1,4 @@
-// #include "dump_mem.h"
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include "db_helper.h"
-
+#include "dump_mem.h"
 
 // This function returns the memory value for a given field (like "MemTotal:" or "MemAvailable:")
 long get_memory_value(const char *field) {
@@ -64,14 +59,14 @@ long get_memory_value(const char *field) {
     return memory_value;
 }
 
-int main(int argc, char *argv[]) {
-    if (argc != 2) {
-        fprintf(stderr, "Usage: %s <field_name>\n", argv[0]);
-        exit(1);
-    }
+// int main(int argc, char *argv[]) {
+//     if (argc != 2) {
+//         fprintf(stderr, "Usage: %s <field_name>\n", argv[0]);
+//         exit(1);
+//     }
 
-    const char *field = argv[1];  // Field name passed as command line argument (e.g., "MemTotal")
-    get_memory_value(field);
+//     const char *field = argv[1];  // Field name passed as command line argument (e.g., "MemTotal")
+//     get_memory_value(field);
 
-    return 0;
-}
+//     return 0;
+// }
