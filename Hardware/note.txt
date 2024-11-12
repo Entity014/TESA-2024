@@ -7,3 +7,6 @@ arecord -f S16_LE -r 44100 -t wav -d 10 test.wav
 aplay test.wav
 
 g++ main.cpp -o sound_player -lsfml-audio -lsfml-system
+
+
+scp <ไฟล์ต้นทาง> userpi <ไฟล์ปลายทาง>  .
