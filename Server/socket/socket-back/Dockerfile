@@ -1,4 +1,12 @@
 FROM python:3
-WORKDIR C:/Users/Glock/Desktop/TESA-2024/Server/socket/socket-back
+WORKDIR /Server/socket/socket-back
 COPY app.py .
+COPY requirement.txt .
+COPY api.py .
+
+RUN pip install --no-cache-dir --upgrade pip && \
+    pip install --no-cache-dir -r requirement.txt
+
 CMD ["python", "hello.py"]
+
+EXPOSE 5000
