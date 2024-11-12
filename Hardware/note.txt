@@ -19,3 +19,8 @@ team: REAI_CMU:_Manatee
 sqlite3 /home/reai_bot/mem.db
 SELECT * FROM data_table;
 .quit
+ 
+cat /proc/meminfo
+MemTotal:        8128196 kB
+MemFree:         6348636 kB
+MemAvailable:    7074544 kB
