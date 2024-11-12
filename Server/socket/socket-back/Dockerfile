@@ -1,12 +1,15 @@
 FROM python:3
-WORKDIR /Server/socket/socket-back
-COPY app.py .
-COPY requirement.txt .
-COPY api.py .
+ WORKDIR /socket-back
+ COPY requirement.txt .
 
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir -r requirement.txt
+ COPY ass.py .
 
-CMD ["python", "hello.py"]
+ RUN pip install --no-cache-dir --upgrade pip && \
+     pip install --no-cache-dir -r requirement.txt && \
+     pip install paho-mqtt
+ CMD ["python", "ass.py"]
 
-EXPOSE 5000
+EXPOSE 4000
+# EXPOSE 5000
+
+ #docker run -dp 0.0.0.0:5000:5000 --name api --restart always api_image
