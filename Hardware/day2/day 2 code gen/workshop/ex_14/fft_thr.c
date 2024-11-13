@@ -14,8 +14,10 @@ void *fft_thr_fcn(void *ptr) {
         printf("Start processing\n");
         for (int i=0; i < 4096; i++) {
             tmp_buf[i] = (double)shared_buf[i]/SHRT_MAX;
+            
         }
-        
+        sound_freq(tmp_buf, freq_buf);
+        printf("%f, %f, %f\n", freq_buf[0], freq_buf[1024], freq_buf[2047]);
         pthread_mutex_unlock(&data_cond_mutex);
     }
 }
