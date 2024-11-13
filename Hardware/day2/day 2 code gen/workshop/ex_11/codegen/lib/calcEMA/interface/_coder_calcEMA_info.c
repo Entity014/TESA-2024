@@ -61,7 +61,7 @@ mxArray *emlrtMexFcnProperties(void)
           "C:\\Users\\REAI2024-07\\Desktop\\TESA-2024\\Hardware\\day2\\day 2 "
           "code gen\\workshop\\ex_11\\calcEMA.m"));
   emlrtSetField(xEntryPoints, 0, "TimeStamp",
-                emlrtMxCreateDoubleScalar(739569.4144097222));
+                emlrtMxCreateDoubleScalar(739569.44863425929));
   emlrtSetField(xEntryPoints, 0, "Constructor",
                 emlrtMxCreateLogicalScalar(false));
   emlrtSetField(xEntryPoints, 0, "Visible", emlrtMxCreateLogicalScalar(true));

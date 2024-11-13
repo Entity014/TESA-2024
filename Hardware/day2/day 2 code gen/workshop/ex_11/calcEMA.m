@@ -1,7 +1,7 @@
 function ema = calcEMA(data, N) %#codegen
     arguments
         data(1,100) double;
-        N(1,1) uint32;
+        N(1,1) double;
     end
     % https://www.investopedia.com/terms/e/ema.asp
     alpha = 2.0 / (N + 1); % Calculate the smoothing factor
