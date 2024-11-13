@@ -91,7 +91,8 @@ int main(int argc) {
 				point_on_start = true;
 			}
             // If no noise, check for silence (more than 4 seconds)
-            if (last_state && difftime(current_time, last_noise_time) >= 3.5) {
+            // if (last_state && difftime(current_time, last_noise_time) >= 3.5) {
+            if (last_state) {
                 // Print "Sound silent" only once after 4 seconds of silence
                 if (!printed_silent_message) {
                     printf("Sound silent at %02d:%02d:%02d\n",

@@ -72,15 +72,24 @@ void *fft_thr_fcn(void *ptr) {
         }
 
         // Print the top 3 frequencies, their magnitudes, and amplitudes
-        printf("\n");
         if (top_amplitudes[0] > 1){
-            
+            printf("\n");
+            last_sound_time = time(NULL);
+            localtime(&last_sound_time);
             for (int i = 0; i < 3; i++) {
             double freq = (top_indices[i] * fs) / N;  // Convert bin index to frequency in Hz
-            printf("Top %d: Frequency: %.2f Hz, Amplitude: %.10f\n", i + 1, freq, top_amplitudes[i]);
+            printf("Top %d: Frequency: %.2f Hz, Amplitude: %.2f\n", i + 1, freq, top_amplitudes[i]);
+            }
         }
+        else{
+            if(difftime(current_time, last_sound_time) <= 2.5) {
+                printf("\n");
+                for (int i = 0; i < 3; i++) {
+                double freq = (top_indices[i] * fs) / N;  // Convert bin index to frequency in Hz
+                printf("Top %d: Frequency: %.2f Hz, Amplitude: %.2f\n", i + 1, freq, top_amplitudes[i]);
+                }
+            }
         }
-
         pthread_mutex_unlock(&data_cond_mutex);
     }
 }

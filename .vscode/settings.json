@@ -3,6 +3,7 @@
         "dump_mem.h": "c",
         "thr_app.h": "c",
         "sound_freq.h": "c",
-        "string.h": "c"
+        "string.h": "c",
+        "sound_app.h": "c"
     }
 }
