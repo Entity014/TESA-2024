@@ -9,7 +9,7 @@ LIBS = -lm -lasound
 TARGET = sound_app
 
 # Source files and object files
-SRCS = sound_app.c abs.c alsa_thr.c fft_thr.c FFTImplementationCallback.c minOrMax.c recognizeDTMF_initialize.c recognizeDTMF_terminate.c recognizeDTMF.c rt_nonfinite.c rtGetInf.c rtGetNaN.c
+SRCS = sound_app.c abs.c alsa_thr.c fft_thr.c FFTImplementationCallback.c minOrMax.c recognizeDTMF_initialize.c recognizeDTMF_terminate.c recognizeDTMF.c rt_nonfinite.c rtGetInf.c rtGetNaN.c fft.c find.c
 OBJS = $(SRCS:.c=.o)
 
 # Default target to build the application

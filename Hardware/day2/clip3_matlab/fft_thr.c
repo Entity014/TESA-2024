@@ -88,7 +88,9 @@ void *fft_thr_fcn(void *ptr) {
         // }
 
         // Recognize the digit based on the two top frequencies
-        char recognized_digit = recognizeDTMF(tmp_buf, fs);
+        char recognized_digit; 
+        int s[2] = {2, 1};
+        recognized_digit = recognizeDTMF(tmp_buf, fs);
         printf("%c", recognized_digit);
         if (recognized_digit != '\0') {
             // Print the recognized digit on the same line without a newline

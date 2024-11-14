@@ -4,7 +4,7 @@
  * File: abs.c
  *
  * MATLAB Coder version            : 24.2
- * C/C++ source code generated on  : 13-Nov-2024 19:28:48
+ * C/C++ source code generated on  : 13-Nov-2024 21:44:27
  */
 
 /* Include Files */
@@ -15,14 +15,14 @@
 
 /* Function Definitions */
 /*
- * Arguments    : const creal_T x[4096]
- *                double y[4096]
+ * Arguments    : const creal_T x[32768]
+ *                double y[32768]
  * Return Type  : void
  */
-void b_abs(const creal_T x[4096], double y[4096])
+void b_abs(const creal_T x[32768], double y[32768])
 {
   int k;
-  for (k = 0; k < 4096; k++) {
+  for (k = 0; k < 32768; k++) {
     double a;
     double b;
     a = fabs(x[k].re);

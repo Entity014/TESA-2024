@@ -4,7 +4,7 @@
  * File: abs.h
  *
  * MATLAB Coder version            : 24.2
- * C/C++ source code generated on  : 13-Nov-2024 19:28:48
+ * C/C++ source code generated on  : 13-Nov-2024 21:44:27
  */
 
 #ifndef ABS_H
@@ -20,7 +20,7 @@ extern "C" {
 #endif
 
 /* Function Declarations */
-void b_abs(const creal_T x[4096], double y[4096]);
+void b_abs(const creal_T x[32768], double y[32768]);
 
 #ifdef __cplusplus
 }

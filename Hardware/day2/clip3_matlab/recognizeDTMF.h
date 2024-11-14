@@ -4,7 +4,7 @@
  * File: recognizeDTMF.h
  *
  * MATLAB Coder version            : 24.2
- * C/C++ source code generated on  : 13-Nov-2024 19:28:48
+ * C/C++ source code generated on  : 13-Nov-2024 21:44:27
  */
 
 #ifndef RECOGNIZEDTMF_H
@@ -20,7 +20,8 @@ extern "C" {
 #endif
 
 /* Function Declarations */
-extern char recognizeDTMF(const double audioSignal[4096], double fs);
+extern void recognizeDTMF(const double b_signal[24001], double fs,
+                          char digit_data[], int digit_size[2]);
 
 #ifdef __cplusplus
 }
