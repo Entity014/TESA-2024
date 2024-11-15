@@ -4,5 +4,4 @@
 /socket/socket-back/.venv/pyvenv.cfg
 /socket/socket-back/.venv/Scripts
 /mosquitto
-/socket/socket-front/node_modules
-/socket/socket-front/package_lock.json
+/socket/socket-front/dashboard
