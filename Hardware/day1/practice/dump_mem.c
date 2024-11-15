@@ -52,9 +52,10 @@ long get_memory_value(const char *field) {
         printf("%s %ld kB\n", search_field, memory_value);
     }
 
+    char dw[] = "dwagjef";
     const char db_name[] = "/home/reai_bot/mem.db";
     dbase_init(db_name);
-    dbase_append(db_name, field);
+    dbase_append(db_name, dw);
 
     return memory_value;
 }

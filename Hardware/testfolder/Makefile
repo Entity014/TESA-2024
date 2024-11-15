@@ -1,36 +1,36 @@
 # Compiler and flags
-CXX = g++
-CXXFLAGS = -Wall -std=c++11
+CC = gcc
+CFLAGS = -Wall -Wextra -g
 
 # Libraries to link
-LIBS = -lmosquitto
+LIBS = -lcurl -lsqlite3 -lcjson 
 
-# Default source and output file names
-SRC = mqtt_client.cpp
-OUT = out
+# Target application name
+TARGET = autosendnaja
 
-# If 'file' variable is passed, use it for custom build names (i.e., test.cpp and test)
-SRC = $(if $(file), $(file).cpp, $(SRC))
-# OUT = $(if $(file), $(file), $(OUT))
+# Source files and object files
+SRCS = db_helper.c autosend.c
+#lsa_thr.c fft_thr.c mqtt_thr.c
+OBJS = $(SRCS:.c=.o)
 
-# Default target
-all: $(OUT)
+# Default target to build the application
+all: $(TARGET)
 
-# Rule for building the output executable
-$(OUT): $(SRC)
-	$(CXX) $(CXXFLAGS) -o $@ $^ $(LIBS)
-	chmod +x $(OUT)
-	./$(OUT)
-	rm -rf $(OUT)
+# Rule to link object files and create the executable with libraries
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
 
-# Target to run the program after building
-run: $(OUT)
-	./$(OUT)
-	rm -rf $(OUT)
+# Rule to compile .c files into .o files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Clean up
+# Clean up build artifacts
 clean:
-	rm -f $(OUT)
+	rm -f $(OBJS) $(TARGET)
 
-# Phony targets (so that they aren't confused with filenames)
+# Run the application
+run: $(TARGET)
+	./$(TARGET)
+
+# Phony targets
 .PHONY: all clean run
