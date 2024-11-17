@@ -1,0 +1,33 @@
+{
+    "files.associations": {
+        "bson.h": "c",
+        "bcon.h": "c",
+        "cstdint": "c",
+        "cjson.h": "c",
+        "sound_app.h": "c",
+        "db_helper.h": "c",
+        "mongoc.h": "c",
+        "stdio.h": "c",
+        "time.h": "c",
+        "abs.h": "c",
+        "movmean.h": "c",
+        "audioprocessingfunction_initialize.h": "c",
+        "minormax.h": "c",
+        "rt_nonfinite.h": "c",
+        "rtwtypes.h": "c",
+        "audioprocessingfunction_types.h": "c",
+        "stdbool.h": "c",
+        "unistd.h": "c",
+        "audioprocessingfunction.h": "c",
+        "array": "c",
+        "string": "c",
+        "string_view": "c",
+        "span": "c",
+        "limits.h": "c",
+        "stdlib.h": "c",
+        "audioprocessingfunction_data.h": "c",
+        "format": "c",
+        "mosquitto.h": "c",
+        "string.h": "c"
+    }
+}

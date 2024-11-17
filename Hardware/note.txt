@@ -1,0 +1,68 @@
+
+g++ -o mosquitto_client mosquitto_client.cpp -lmosquitto
+
+อัด
+arecord -f S16_LE -r 44100 -t wav -d 10 test.wav
+ใช้
+aplay test.wav
+
+./sound_app plughw:0,0 48000
+
+g++ main.cpp -o sound_player -lsfml-audio -lsfml-system
+
+
+scp <ไฟล์ต้นทาง> userpi <ไฟล์ปลายทาง>  .
+
+htop
+
+
+team: REAI_CMU:_Manatee
+
+sqlite3 /home/reai_bot/mem.db
+SELECT * FROM data_table;
+.quit
+ 
+cat /proc/meminfo
+MemTotal:        8128196 kB
+MemFree:         6348636 kB
+MemAvailable:    7074544 kB
+
+
+curl -X PUT -d '{"message": "Hello"}' "https://tesa2024-reai-cmu-manatee-default-rtdb.asia-southeast1.firebasedatabase.app/test.json"
+
+
+# Compiler and flags
+CC = gcc
+CFLAGS = -Wall -Wextra -g
+
+# Libraries to link
+LIBS = -lpaho-mqtt3c
+
+# Target application name
+TARGET = mqtt_sub
+
+# Source files and object files
+SRCS = mqtt_subscribe.c
+OBJS = $(SRCS:.c=.o)
+
+# Default target to build the application
+all: $(TARGET)
+
+# Rule to link object files and create the executable with libraries
+$(TARGET): $(OBJS)
+	$(CC) $(CFLAGS) -o $(TARGET) $(OBJS) $(LIBS)
+
+# Rule to compile .c files into .o files
+%.o: %.c
+	$(CC) $(CFLAGS) -c $< -o $@
+
+# Clean up build artifacts
+clean:
+	rm -f $(OBJS) $(TARGET)
+
+# Run the application
+run: $(TARGET)
+	./$(TARGET)
+
+# Phony targets
+.PHONY: all clean run
