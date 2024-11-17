@@ -1,0 +1,26 @@
+Server Integration
+
+Want to setting server to connect between MATLAB and Hardware
+
+1.Create Database (using mongoDB) which can receive json data format ||DONE
+
+2.Create RESTFUL API which
+	2.1 Authentication before access to database server by using API key  || DONE
+	2.2 Receive voice files (.wav) from client to insert into database || DONE
+	2.3 Client can get voice files (.wav) from REST API  || DONE
+	2.4 Can list voice files which are in database || DONE
+
+3. Create Dashboard (using react and rechart)
+	3.1 Using Websocket Protocal to result 4 graph which will plot Energy Consumption , Pressure , Punch , Position of punch by x-axis is datetime.then pull data from RESTFUL API which has feature to Zoom in / Zoom out , Select some value to plot the graph , button for start/stop to plot the graph ||DONE
+
+	3.2 When the result graph has reach to 200 spot the graph will clear itself and continue to plot ||DONE
+
+	3.3 Can view data by select start and end date *****Confuesed******
+
+	**DOING**
+	3.4 Button for sending order to Raspberry Pi like order Raspberry Pi to  save files on Server
+	3.5 Display timestamp of voice files and result of prediction like  00.00.01 Normal , 00.00.10 Faulty by using MQTT protocal with Websocket
+	3.6 Display sound signal wave from voice files and result of position prediction on sound signal wave
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MQTT WebSocket Client</title>
+</head>
+<body>
+    <h1>MQTT to WebSocket Example</h1>
+    <div id="messages"></div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.4.1/socket.io.min.js"></script>
+    <script>
+        const socket = io('mqtt://localhost:1883/');  // Update with your server address
+
+        socket.on('connect', () => {
+            console.log('Connected to WebSocket');
+        });
+
+        socket.on('mqtt_message', (data) => {
+            console.log('Received message:', data);
+            const messages = document.getElementById('messages');
+            messages.innerHTML += `<p>Topic: ${data.topic}, Message: ${data.message}</p>`;
+        });
+
+        socket.on('disconnect', () => {
+            console.log('Disconnected from WebSocket');
+        });
+    </script>
+</body>
+</html>
